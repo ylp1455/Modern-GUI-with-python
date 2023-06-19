@@ -1,10 +1,33 @@
-import customtikinter 
+import customtkinter
 
-customtikinter.set_appearance_mode("dark")
-# you can use system or light for the mode
+customtkinter.set_appearance_mode("dark")
+# You can use "system" or "light" for the mode
 
-customtikinter.set_defult_color_theme("dark-blue")
-# you can also set green insted blue
+customtkinter.set_default_color_theme("dark-blue")
+# You can also set "green" instead of "blue"
 
+root = customtkinter.CTk()
+root.geometry("500x500")
 
-root = customtkinter.CTl()
+def load():
+    print("test")
+
+frame = customtkinter.CTkFrame(master=root)
+frame.pack(pady=20, padx=10, fill="both", expand=True)
+
+label = customtkinter.CTkLabel(master=frame, text="Login system")
+label.pack(pady=12, padx=10)
+
+entry1 = customtkinter.CTkEntry(master=frame, placeholder_text="User Name")
+entry1.pack(pady=12, padx=10)
+
+entry2 = customtkinter.CTkEntry(master=frame, placeholder_text="password", show="*")
+entry2.pack(pady=12, padx=10)
+
+button = customtkinter.CTkButton(master=frame, text="Login", command=load)
+button.pack(pady=12, padx=10)
+
+checkbox = customtkinter.CTkCheckBox(master=frame, text="Remember me")
+checkbox.pack(pady=12, padx=10)
+
+root.mainloop()
